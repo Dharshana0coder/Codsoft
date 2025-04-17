@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>The Barbequeen</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            background-image: url('https://plus.unsplash.com/premium_photo-1669742928112-19364a33b530?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8ZGVsaWNpb3VzJTIwZm9vZHxlbnwwfHwwfHx8MA%3D%3D');
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            background-position: center;
+            align-items: center;
+            font-size: 15px;
+            color: #f8efee;
+            line-height: 2;
+        }
+        #showcase {
+            background-image: url('https://plus.unsplash.com/premium_photo-1669742928112-19364a33b530?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8ZGVsaWNpb3VzJTIwZm9vZHxlbnwwfHwwfHx8MA%3D%3D');
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 0 20px;
+        }
+        #showcase h1 {
+            font-size: 50px;
+            line-height: 1.2;
+        }
+        #showcase p {
+            font-size: 20px;
+        }
+        #showcase .button {
+            font-size: 18px;
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 10px;
+            margin-top: 30px;
+        }
+        #showcase .button:hover {
+            background: #beb9ae;
+            color: #fff;
+        }
+        section {
+            padding: 20px;
+            color: rgb(19, 17, 16);
+            font-size: 28px;
+            background-image: url('https://assets.cntraveller.in/photos/62d542ee288f80d6ed75ac4d/16:9/w_6720,h_3780,c_limit/Biryani%20lead.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            height: 1100px;
+        }
+        .a {
+            color: #cd0d0d;
+        }
+    </style>
+</head>
+<body>
+    <header id="showcase">
+        <h1>Welcome to Barbequeen</h1>
+        <p>
+            "One cannot think well, love well, sleep well, if one has not dined well."
+        </p>
+        <a href="#" class="button">Read More</a>
+    </header>
+    <section id="more-info">
+        <p>
+            "Indulge in a culinary journey through our diverse menu, featuring fresh, locally-sourced ingredients prepared with authentic flavors. From traditional South Indian curries to international delights, our chefs expertly craft each dish to tantalize your taste buds. Whether you're seeking a light breakfast, a hearty lunch, or a romantic dinner, our dining experience promises to be a highlight of your stay."
+        </p>
+    </section>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            let button = document.querySelector(".button");
+        
+            button.addEventListener("click", function(event) {
+                event.preventDefault();
+                
+                // Scroll to the section with id "more-info"
+                let moreInfoSection = document.querySelector("#more-info");
+                
+                if (moreInfoSection) {
+                    moreInfoSection.scrollIntoView({
+                        behavior: "smooth"
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
