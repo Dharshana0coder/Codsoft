@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-ua-Compatible" content="IE=edge">
+        <meta name="viewport" contact="width=device-width,intial-scale=0.1">
+        <title>CALCULATOR</title>
+        <title>background image</title>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+    outline: none;
+}
+.container{
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+.calculator{
+    background-color: #d1aae9;
+    padding: 30px;
+    border-radius:50px;
+    box-shadow: inset 5px 5px 12px #bc4d91,
+                      5px 5px 12px rgba(0,0,0,.16);
+    display:grid;
+    grid-template-columns: repeat(4,68px);
+
+}
+input{
+    grid-column: span 4;
+    height:70px;
+    width: 260px;
+    background-color:#ebbff0;
+    box-shadow: inset -5px -5px 12px #e775e7ed;
+                inset 5px 5px 12px rgba(0,0,0,.16);
+    border:none;
+    border-radius:40px;
+    color:rgba(70,70,70);
+    font-size:50px;
+    margin:auto;
+    margin-top:30px ;
+    margin-bottom: 30px;
+    padding:20px;
+}
+button{
+    height: 48px;
+    width:48px;
+    background-color:#ec7be2 ;
+    box-shadow: inset -5px -5px 12px #e18de2;
+                     5px 5px 12px rgba(0,0,0,.16);
+    border:none;
+    border-radius:30%;
+    margin:8px;
+    font-size:16px;
+
+}
+.equal{
+    width:115px;
+    border-radius:40px;
+    background-color:#cc5be8;
+    box-shadow: inset -5px -5px 12px #e697f0;
+                inset 5px 5px 12px rgba(0,0,0,.16);
+ 
+}
+body{
+    background-image:url('wp5304549-pink-1920x1080-tumblr-gamer-girl-wallpapers.jpg');
+    background-size:2000px;
+
+    background-repeat: no-repeat;
+    background-attachment:fixed;
+}</style>
+    <body>
+        
+        <div class="container">
+            <div class="calculator">
+                <input type="text" placeholder="0" id="output-screen">
+                <button onclick="Clear()">C</button>
+                <button onclick="del()">DEL</button>
+                <button onclick="display('.')">.</button>
+                <button onclick="display('/')">/</button>
+                <button onclick="display('%')">%</button>
+                <button onclick="display('0')">0</button>
+                <button onclick="display('1')">1</button>
+                <button onclick="display('2')">2</button>
+                <button onclick="display('+')">+</button>
+                <button onclick="display('3')">3</button>
+                <button onclick="display('4')">4</button>
+                <button onclick="display('5')">5</button>
+                <button onclick="display('-')">-</button>
+                <button onclick="display('6')">6</button>
+                <button onclick="display('7')">7</button>
+                <button onclick="display('8')">8</button>
+                <button onclick="display('')"></button>
+                <button onclick="display('9')">9</button>
+                <button onclick="Calculate()" class="equal">=</button>
+            </div>
+        </div>
+        <script>
+            let outputScreen=document.getElementById("output-screen");
+
+            function display(num){
+                outputScreen.value += num;
+            }
+            function Calculate(){
+                try{
+                    outputScreen.value=eval(outputScreen.value);
+                }
+                catch(err){
+                    alert("Invalid");
+                }
+            }
+            function Clear(){
+                outputScreen.value="";
+            }
+            function del(){
+                outputScreen.value= outputScreen.value.slice(0,-1);
+            }
+        </script>
+    </body>
+</html>
